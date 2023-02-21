@@ -1,0 +1,26 @@
+{
+  "name": "bitbucket-changelog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "node index.js",
+    "lint": "standard"
+  },
+  "keywords": [],
+  "author": "Alejandroid17",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "16.0.3",
+    "fs-extra": "11.1.0",
+    "nunjucks": "3.2.3",
+    "ora": "6.1.2"
+  },
+  "devDependencies": {
+    "standard": "17.0.0"
+  },
+  "eslintConfig": {
+    "extends": "./node_modules/standard/eslintrc.json"
+  }
+}

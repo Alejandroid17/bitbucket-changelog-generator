@@ -1,0 +1,9 @@
+# Env
+.env*
+!env.template
+
+# IDE
+.vscode/
+
+# Dependency directories
+node_modules/

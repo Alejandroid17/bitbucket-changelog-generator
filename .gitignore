@@ -7,3 +7,6 @@
 
 # Dependency directories
 node_modules/
+
+# Build
+dist/

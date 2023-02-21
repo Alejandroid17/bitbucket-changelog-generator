@@ -1,6 +1,6 @@
 # Env
 .env*
-!env.template
+!.env.template
 
 # IDE
 .vscode/

@@ -2,15 +2,17 @@
   "name": "bitbucket-changelog",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "source": "index.js",
+  "main": "dist/main.js",
   "type": "module",
   "scripts": {
     "dev": "node index.js",
-    "lint": "standard"
+    "lint": "standard",
+    "build": "parcel build"
   },
   "keywords": [],
   "author": "Alejandroid17",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "dotenv": "16.0.3",
     "fs-extra": "11.1.0",
@@ -18,9 +20,15 @@
     "ora": "6.1.2"
   },
   "devDependencies": {
+    "parcel": "2.8.3",
     "standard": "17.0.0"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
+  },
+  "targets": {
+    "main": {
+      "optimize": true
+    }
   }
 }

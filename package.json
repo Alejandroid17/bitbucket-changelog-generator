@@ -1,7 +1,7 @@
 {
   "name": "bitbucket-changelog",
   "version": "1.0.0",
-  "description": "",
+  "description": "A changelog generator for bitbucket.",
   "source": "index.js",
   "main": "dist/main.js",
   "type": "module",
@@ -10,7 +10,16 @@
     "lint": "standard",
     "build": "parcel build"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Alejandroid17/bitbucket-changelog"
+  },
+  "keywords": [
+    "changelog",
+    "pull-request",
+    "bitbucket",
+    "log"
+  ],
   "author": "Alejandroid17",
   "license": "MIT",
   "dependencies": {
@@ -26,6 +35,11 @@
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
   },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "targets": {
     "main": {
       "optimize": true

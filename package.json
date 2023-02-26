@@ -1,7 +1,7 @@
 {
-  "name": "bitbucket-changelog",
+  "name": "bitbucket-changelog-generator",
   "version": "1.0.0",
-  "description": "A changelog generator for bitbucket, using the merged pull requests",
+  "description": "A changelog generator for bitbucket, using the merged pull requests and template",
   "source": "src/index.js",
   "main": "dist/index.js",
   "bin": {
@@ -26,7 +26,8 @@
     "changelog",
     "pull-request",
     "bitbucket",
-    "log"
+    "log",
+    "templates"
   ],
   "author": "Alejandroid17",
   "license": "MIT",

@@ -85,7 +85,7 @@ You can overwrite the configuration to overwrite:
 
 ### How to do it
 1. Create a `.json` file.
-2. Define the enviroment var `CHANGELOG_CONFIG_PATH` with the path to the `json` file that overwrites the configuration.
+2. Define the environment var `CHANGELOG_CONFIG_PATH` with the path to the `json` file that overwrites the configuration.
 3. Define the custom configuration, the options are:
 
 ```js

@@ -2,7 +2,7 @@
     <h1>
         📓
         <br />
-        Bitbucket changelog
+        Bitbucket changelog generator
         <br />
     </h1>
 </div>
@@ -18,13 +18,12 @@
 <strong>A changelog generator for bitbucket, using the merged pull requests and template</strong>
 </div>
 
-<!--
+
 <div align="center"> 
 <br />
-<pre></pre>
+<pre>npm i <a href="https://www.npmjs.com/package/bitbucket-changelog-generator">bitbucket-changelog-generator</a></pre>
 <br />
 </div>
---->
 
 <!-- TABLE OF CONTENTS -->
 
@@ -47,11 +46,11 @@
 ## Installation
 
 ```shell
-pnpm install bitbucket-changelog
+pnpm install bitbucket-changelog-generator
 ```
 or
 ```shell
-npm install bitbucket-changelog
+npm install bitbucket-changelog-generator
 ```
 
 ## How to use

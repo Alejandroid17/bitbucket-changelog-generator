@@ -5,9 +5,12 @@
   "source": "src/index.js",
   "main": "dist/index.js",
   "bin": {
-    "generate-changelog": "./dist/index.js"
+    "generate-changelog": "dist/index.js"
   },
   "type": "module",
+  "engines": {
+    "node": ">=16.14.1"
+  },
   "scripts": {
     "copy-templates": "cp ./src/template.md ./src/default-template.md dist",
     "dev": "node src/index.js",

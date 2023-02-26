@@ -12,7 +12,8 @@
     "copy-templates": "cp ./src/template.md ./src/default-template.md dist",
     "dev": "node src/index.js",
     "lint": "standard",
-    "build": "mkdir -p dist && npm run copy-templates && parcel build"
+    "build": "mkdir -p dist && npm run copy-templates && parcel build",
+    "publish": "clean-publish --fields targets"
   },
   "repository": {
     "type": "git",
@@ -34,6 +35,7 @@
     "ora": "6.1.2"
   },
   "devDependencies": {
+    "clean-publish": "4.1.1",
     "parcel": "2.8.3",
     "standard": "17.0.0"
   },

@@ -1,3 +1,4 @@
+import fetch from 'node-fetch'
 import CONFIGURATION from './configuration.js'
 
 const BASE_URL_V2 = 'https://api.bitbucket.org/2.0/repositories/'
@@ -33,12 +34,8 @@ async function listPullRequest (context) {
   url.search = new URLSearchParams({ ...context, q: query, fields: queryFields, pagelen: defaultPageLen })
 
   const response = await fetch(url, { headers })
-  if (!response.ok) {
-    throw (await response.text())
-  } else {
-    const data = await response.json()
-    return data
-  }
+  if (!response.ok) throw (await response.text())
+  return await response.json()
 }
 
 export { listPullRequest }

@@ -7,13 +7,14 @@ import readline from 'readline'
 import ora from 'ora'
 
 const sort = '-created_on'
-nunjucks.configure()
-
+const state = 'MERGED'
+const spinner = ora()
 const LAST_LOG_DATE_REGEX = /<!---\s*LastTime:\s*(\d+)\s*--->/
+
+nunjucks.configure()
 
 class Changelog {
   constructor () {
-    this.spinner = ora()
     this.readStream = fs.createReadStream(CONFIGURATION.outputPath)
     this.writeStream = fs.createWriteStream(`${CONFIGURATION.outputPath}.tmp`)
   }
@@ -21,21 +22,21 @@ class Changelog {
   async generateChangeLog () {
     // Gets last log date
     const lastLogDate = await this.#getLastLogTime()
-    this.spinner.succeed('Get the last log time')
+    spinner.succeed('Get the last log time')
 
     // Gets the data of the logs for each section
     const sectionData = await this.#getSectionLogs(lastLogDate)
-    this.spinner.succeed('Gets the data from the different sections')
+    spinner.succeed('Gets the data from the different sections')
 
     // Generate the current log with the data.
     const content = await this.#getContent(sectionData)
-    this.spinner.succeed('Create the new content of the changelog')
+    spinner.succeed('Create the new content of the changelog')
 
     // Generate the changelog file with the new content.
     this.#generateChangeLog(content)
-    this.spinner.succeed('Generate the new changelog')
+    spinner.succeed('Generate the new changelog')
 
-    this.spinner.succeed('Changelog generated')
+    spinner.succeed('Changelog generated')
   }
 
   async #getSectionLogs (lastLogDate) {
@@ -44,10 +45,8 @@ class Changelog {
     for await (const section of CONFIGURATION.sections) {
       const { slug, title, branchFilter } = section
 
-      this.spinner.indent = 2
       const { size, data: sectionData } = await this.#getLogs(lastLogDate, branchFilter)
       data[slug] = { title, values: sectionData, size }
-      this.spinner.indent = 0
     }
 
     return data
@@ -69,9 +68,7 @@ class Changelog {
         .pipe(new PrependLineTransform(content))
         .pipe(this.writeStream)
 
-      await stream.on('close', () => {
-        this.#renameTemporary()
-      })
+      await stream.on('close', () => this.#renameTemporary())
     }
   }
 
@@ -82,15 +79,13 @@ class Changelog {
     let dataSize = 0
 
     while (hasNext) {
-      this.spinner.indent = 4
-
       const { values, next, size, page } = await listPullRequest({
         page: currentPage,
         sort,
         q: {
           updateDate: lastLogDate,
           brachName: branchFilter,
-          state: 'MERGED'
+          state
         },
         fields: CONFIGURATION.fields
       })
@@ -99,7 +94,6 @@ class Changelog {
       currentPage = page + 1
       if (values) data = [...data, ...values]
     }
-    this.spinner.indent = 2
     return { size: dataSize, data }
   }
 
@@ -135,9 +129,7 @@ class Changelog {
         }
       })
 
-      lineReader.on('close', () => {
-        resolve(lastLogTime)
-      })
+      lineReader.on('close', () => resolve(lastLogTime))
     })
   }
 }

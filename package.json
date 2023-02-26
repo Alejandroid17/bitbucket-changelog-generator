@@ -1,14 +1,18 @@
 {
   "name": "bitbucket-changelog",
   "version": "1.0.0",
-  "description": "A changelog generator for bitbucket.",
-  "source": "index.js",
-  "main": "dist/main.js",
+  "description": "A changelog generator for bitbucket, using the merged pull requests",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "bin": {
+    "generate-changelog": "./dist/index.js"
+  },
   "type": "module",
   "scripts": {
-    "dev": "node index.js",
+    "copy-templates": "cp ./src/template.md ./src/default-template.md dist",
+    "dev": "node src/index.js",
     "lint": "standard",
-    "build": "parcel build"
+    "build": "mkdir -p dist && npm run copy-templates && parcel build"
   },
   "repository": {
     "type": "git",
@@ -24,7 +28,8 @@
   "license": "MIT",
   "dependencies": {
     "dotenv": "16.0.3",
-    "fs-extra": "11.1.0",
+    "just-merge": "3.2.0",
+    "node-fetch": "3.3.0",
     "nunjucks": "3.2.3",
     "ora": "6.1.2"
   },
@@ -33,7 +38,10 @@
     "standard": "17.0.0"
   },
   "eslintConfig": {
-    "extends": "./node_modules/standard/eslintrc.json"
+    "extends": "./node_modules/standard/eslintrc.json",
+    "ignorePatterns": [
+      "dist/*"
+    ]
   },
   "files": [
     "dist",

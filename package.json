@@ -20,7 +20,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Alejandroid17/bitbucket-changelog"
+    "url": "https://github.com/Alejandroid17/bitbucket-changelog-generator"
+  },
+  "bugs": {
+    "url": "https://github.com/Alejandroid17/bitbucket-changelog-generator/issues/new?labels=bug&template=BUG.md"
   },
   "keywords": [
     "changelog",

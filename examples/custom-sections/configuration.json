@@ -1,0 +1,18 @@
+{
+  "title": "My custom Changelog",
+  "fields": [
+    "size", "values.id", "values.title", "values.created_on", "values.links.html.href"],
+  "sections": [
+    {
+      "slug": "feature",
+      "title": "My new features",
+      "branchFilter": "feature/"
+    },
+    {
+      "slug": "bugfix",
+      "title": "My resolved bugs",
+      "branchFilter": "bugfix/"
+    }
+  ]
+}
+

@@ -43,10 +43,10 @@ class Changelog {
     const data = {}
 
     for await (const section of CONFIGURATION.sections) {
-      const { slug, title, branchFilter } = section
+      const { slug, branchFilter } = section
 
       const { size, data: sectionData } = await this.#getLogs(lastLogDate, branchFilter)
-      data[slug] = { title, values: sectionData, size }
+      data[slug] = { ...section, values: sectionData, size }
     }
 
     return data

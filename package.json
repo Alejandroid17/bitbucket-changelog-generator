@@ -13,9 +13,9 @@
   },
   "scripts": {
     "copy-templates": "cp ./src/template.md ./src/default-template.md dist",
-    "dev": "node src/index.js",
+    "dev": "NODE_ENV=development node src/index.js",
     "lint": "standard",
-    "build": "mkdir -p dist && npm run copy-templates && parcel build",
+    "build": "mkdir -p dist && npm run copy-templates && NODE_ENV=production parcel build",
     "publish": "clean-publish --fields targets"
   },
   "repository": {

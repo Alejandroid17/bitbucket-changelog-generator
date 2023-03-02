@@ -9,13 +9,18 @@
 
 <div align="center">
 
+[![npm (tag)](https://img.shields.io/npm/v/bitbucket-changelog-generator/latest?style=flat-square)](https://www.npmjs.com/package/bitbucket-changelog-generator)
 [![License](https://img.shields.io/github/license/Alejandroid17/bitbucket-changelog?style=flat-square)](https://github.com/Alejandroid17/bitbucket-changelog/blob/main/LICENSE)
+[![Examples](https://img.shields.io/badge/examples-🚀-yellow.svg?style=flat-square)](https://github.com/Alejandroid17/bitbucket-changelog-generator/tree/main/examples)
 
 <br />
 </div>
 
 <div align="center"> 
 <strong>A changelog generator for bitbucket, using the merged pull requests and template</strong>
+<br />
+<br />
+<strong><a href="https://github.com/Alejandroid17/bitbucket-changelog-generator/tree/main/examples">Examples</a></strong>
 </div>
 
 

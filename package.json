@@ -1,6 +1,6 @@
 {
   "name": "bitbucket-changelog-generator",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A changelog generator for bitbucket, using the merged pull requests and template",
   "source": "src/index.js",
   "main": "dist/index.js",

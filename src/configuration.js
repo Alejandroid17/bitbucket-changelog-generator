@@ -5,7 +5,8 @@ import path from 'path'
 import ora from 'ora'
 
 const spinner = ora()
-const rootFolder = process.env.NODE_ENV === 'development' ? 'src' : 'dist'
+const rootFolder = process.env.NODE_ENV === 'development' ? 'src' : './node_modules/bitbucket-changelog-generator/dist/'
+const defaultTemplatePath = path.join(rootFolder, 'default-template.md')
 
 const {
   parsed: {
@@ -24,7 +25,7 @@ const FIXED_CONFIGURATION = {
     username: BITBUCKET_USERNAME,
     appPassword: BITBUCKET_APP_PASSWORD
   },
-  defaultTemplatePath: path.join(rootFolder, 'default-template.md')
+  defaultTemplatePath
 }
 
 const DEFAULT_CONFIGURATION = {

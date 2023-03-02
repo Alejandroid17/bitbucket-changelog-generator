@@ -1,0 +1,25 @@
+{
+  "title": "📓 Changelog 📓",
+  "templatePath": "custom-template.md",
+  "fields": [
+    "values.id", "values.title", "values.links.html.href"],
+  "currentDate": {
+    "locale": "sv-SE",
+    "options": {}
+  },
+  "sections": [
+    {
+      "slug": "feature",
+      "title": "Features",
+      "branchFilter": "feature/",
+      "icon": "🚀"
+    },
+    {
+      "slug": "bugfix",
+      "title": "Bugfixes",
+      "branchFilter": "bugfix/",
+      "icon": "🐛"
+    }
+  ]
+}
+

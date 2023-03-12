@@ -43,4 +43,4 @@ jobs:
       run: pnpm install
 
     - name: Integration tests
-      run: npm test:integration
+      run: pnpm run test:integration

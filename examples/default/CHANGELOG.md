@@ -14,6 +14,7 @@
 
 ## Features
 
+
 - Added a new feature for user authentication [#PR1](https://bitbucket.org/repo-proyect/proyect/pull-requests/1)
 - Implemented a feature for user profile customization [#PR2](https://bitbucket.org/repo-proyect/proyect/pull-requests/2)
 - Added a new search feature for the website [#PR3](https://bitbucket.org/repo-proyect/proyect/pull-requests/3)
@@ -26,6 +27,7 @@
 - Implemented a feature for allowing users to save their progress in a form [#PR13](https://bitbucket.org/repo-proyect/proyect/pull-requests/13)
 
 ## Bugfixes
+
 
 - Fixed a critical bug in the checkout process [#PR4](https://bitbucket.org/repo-proyect/proyect/pull-requests/4)
 - Resolved an issue with user login functionality [#PR5](https://bitbucket.org/repo-proyect/proyect/pull-requests/5)
@@ -42,5 +44,4 @@ Nothing
 Nothing
 
 
-<!--- LastTime: 1675277177000 --->
-
+<!--- LastTime: 1677782981338 --->

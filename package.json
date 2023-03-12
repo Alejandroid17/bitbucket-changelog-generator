@@ -16,7 +16,8 @@
     "dev": "NODE_ENV=development node src/index.js",
     "lint": "standard",
     "build": "mkdir -p dist && npm run copy-templates && NODE_ENV=production parcel build",
-    "publish": "clean-publish --fields targets"
+    "publish": "clean-publish --fields targets",
+    "test:integration": "NODE_ENV=development node ./tests/integration.js"
   },
   "repository": {
     "type": "git",
@@ -43,6 +44,8 @@
   },
   "devDependencies": {
     "clean-publish": "4.1.1",
+    "mockdate": "3.0.5",
+    "nock": "13.3.0",
     "parcel": "2.8.3",
     "standard": "17.0.0"
   },
